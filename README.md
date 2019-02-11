@@ -158,7 +158,7 @@ docker stop container_name
 docker pull parity/parity:v2.2.9 # to pull image from docker registry
 
 docker run -d 
-           --cpus=2 
+           --cpus="2" 
            --name="2-cpu" 
            -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp 
            -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ 
