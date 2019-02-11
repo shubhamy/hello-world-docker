@@ -136,10 +136,37 @@ docker run source_image
 docker run -it source_image bash
 docker run -it --rm --name container_name source_image bash
 docker run -v ~/Downloads:/home:rw -p 6969:22 source_image
+docker --cpus="2" run -v 
 
 # Get inside a container
 docker exec -it container_name bash
 docker attach container_name # ctrl+p followed by ctrl+q to detach
 
+# Get logs from the container without attaching
+docker logs -f container_name # -f, --follow. ctrl+c to exit
+
 # start a container
 docker start container_name
+
+# stop a container
+docker stop container_name
+```
+
+### Example (running parity using docker)
+
+```bash
+docker pull parity/parity:v2.2.9 # to pull image from docker registry
+
+docker run -d 
+           --cpus=2 
+           --name="2-cpu" 
+           -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp 
+           -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ 
+           parity/parity:v2.2.9 
+           --base-path /home/parity/.local/share/io.parity.ethereum/ 
+           --config /home/parity/.local/share/io.parity.ethereum/config.toml 
+           --pruning fast 
+           --jsonrpc-cors "null" 
+           --jsonrpc-interface all 
+           --jsonrpc-hosts all
+```
