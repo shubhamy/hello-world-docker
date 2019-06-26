@@ -1,3 +1,5 @@
+Docker is a containerisation platform.
+
 Docker allows users to easily deploy their applications on sandbox called containers which are running on host OS.
 
 The key benefit of Docker is that it allows users to package an application with all of its dependencies into a standardized unit for software development.
@@ -5,7 +7,7 @@ This increases efficiency, as in , no unnecessary packages are installed on cont
 
 The computational power required for containers is relatively lower than that of hypervisors
 
-Quote :- he computational overhead spent virtualizing hardware for a guest OS to use is substantial.
+Quote :- the computational overhead spent virtualizing hardware for a guest OS to use is substantial.
 
 Containers take a different approach: by leveraging the low-level mechanics of the host operating system, containers provide most of the isolation of virtual machines at a fraction of the computing power
 
