@@ -66,7 +66,7 @@ MAINTAINER author_name
 
 ### RUN
 
-The `RUN` command takes a command as its argument and runs it to form the image. Unline `CMD`, it is actually used to build the image.
+The `RUN` command takes a command as its argument and runs it to form the layer of image. Unline `CMD`, it is actually used to build the image.
 
 ```Docker
 RUN apt update && \
