@@ -16,3 +16,33 @@ Containers take a different approach: by leveraging the low-level mechanics of t
 
 ```2 advantages - portability efficiency.
 ```
+
+Common Instructions of dockerfile :-
+FROM: We use FROM to set the base image for subsequent instructions. In every valid Dockerfile, FROM is the first instruction.
+LABEL: We use LABEL to organize our images as per project, module, licensing etc. We can also use LABEL to help in automation.
+In LABEL we specify a key value pair that can be later used for programmatically handling the Dockerfile.
+RUN: We use RUN command to execute any instructions in a new layer on top of the current image. With each RUN command we add something on top of the image and use it in subsequent steps in Dockerfile.
+CMD: We use CMD command to provide default values of an executing container. In a Dockerfile, if we include multiple CMD commands, then only the last instruction is used.
+
+Run vs CMD - check readme.md
+
+Dockerfile :- The Dockerfile is the source code of the Image.
+Image :-  The image is just the "compiled version" of the "source code" which is the Dockerfile.
+
+  +------------+  docker build   +--------------+  docker run -dt   +-----------+  docker exec -it   +------+
+    | Dockerfile | --------------> |    Image     | --------------->  | Container | -----------------> | Bash |
+    +------------+                 +--------------+                   +-----------+                    +------+
+                                     ^
+                                     | docker pull
+                                     |
+                                   +--------------+
+                                   |   Registry   |
+                                   +--------------+
+                                   
+  Image vs Layers :- 
+Image: A Docker image is built up from a series of read-only layers
+Layer: Each layer represents an instruction in the image’s Dockerfile.
+
+***Namespaces
+                                   
+                                   
