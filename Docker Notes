@@ -42,12 +42,18 @@ Image :-  The image is just the "compiled version" of the "source code" which is
                                      |
                                    +--------------+
                                    |   Registry   |
-                                   +--------------+
+
++--------------+
                                    
   Image vs Layers :- 
 Image: A Docker image is built up from a series of read-only layers
 Layer: Each layer represents an instruction in the image’s Dockerfile.
 
 ***Namespaces
-                                   
+           
+ For system level virtualization, Docker was initially using LXC driver, then moved to libcontainer which is now renamed as runc.
+ 
+ Unlike a virtual machine, a container does not need to boot the operating system kernel, so containers can be created in less than a second. This feature makes container-based virtualization unique and desirable than other virtualization approaches.
+
+Docker uses host OS kernel, there is no custom or additional kernel inside container. All containers which run on a machine are sharing this "host" kernel.
                                    
